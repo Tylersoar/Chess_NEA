@@ -6,11 +6,14 @@ import com.company.pieces.piece;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 import java.io.IOException;
 import java.util.LinkedList;
 
 public class Board {
-    private static LinkedList<piece> ps = new LinkedList<>();
+    public static LinkedList<piece> ps = new LinkedList<>();
     private static LinkedList<location> position = new LinkedList<>();
 
     public static void main(String[] args) throws IOException {
@@ -18,7 +21,7 @@ public class Board {
 
 
         JFrame frame = new JFrame();
-        frame.setUndecorated(false);
+        frame.setUndecorated(true);
         frame.setBounds(10, 10, 512, 512); //creates window and sets the boundaries
 
         JPanel pn = new JPanel() {
@@ -39,10 +42,6 @@ public class Board {
 
                         boolean piecePlaced = checkStartLocations(x, y);
 
-                        if (piecePlaced) {
-
-
-                        }
 
                     }
                     white = !white;
@@ -59,8 +58,46 @@ public class Board {
         frame.add(pn);
         frame.setDefaultCloseOperation(3); //enables you to close the tab
         frame.setVisible(true);
+        frame.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
 
 
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+
+
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+
+
+            }
+        });
+        frame.addMouseMotionListener(new MouseMotionListener() {
+            @Override
+            public void mouseDragged(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseMoved(MouseEvent e) {
+
+            }
+        });
     }
 
     private static boolean checkStartLocations(int x, int y) {
@@ -73,7 +110,7 @@ public class Board {
 
 
 
-        if (x == 0 && y == 7) {
+        if (x == 0 && y == 7) { //adds all pieces on board to linked list
             piece wRook = new piece(tempLocation.getColumn(), tempLocation.getRow(), true, "rook", ps, "/com/company/res/white/rook.png",x);
             tempLocation.setPicture(new JLabel(wRook.getFileLocation())); //CHECK
             tempLocation.setPieces(wRook);
@@ -183,8 +220,6 @@ public class Board {
             tempLocation.setPieces(bPawn);
             piecePlaced = true;
         }
-
-
 
 
 

@@ -7,8 +7,6 @@ import com.company.pieces.piece;
 public class location {
     private final file column;
     private final Integer row;
-    //private file column;
-    //private Integer row;
     private JLabel picture = null;
     private piece Pieces = null;
 

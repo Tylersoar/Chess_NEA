@@ -20,7 +20,11 @@ public class piece {
 
 
 
+
+
     public piece(file xp, int yp, boolean isWhite, String n, LinkedList<piece> ps, String fileLocation, int x) {
+
+
         this.column = xp; //get the x and y values of each piece. x and y-values have a boundary of 1-8 for Y and A-H on for X
         this.row = yp;
         this.isWhite = isWhite;
@@ -41,6 +45,8 @@ public class piece {
         }
         this.column = xp; //moves the piece after attacking or moving
         this.row = yp;
+
+
 
     }
 
