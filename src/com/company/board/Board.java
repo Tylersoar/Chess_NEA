@@ -14,6 +14,7 @@ import java.util.LinkedList;
 
 public class Board {
     public static LinkedList<piece> ps = new LinkedList<>();
+    public static piece selectedPiece=null;
     private static LinkedList<location> position = new LinkedList<>();
 
     public static void main(String[] args) throws IOException {
@@ -72,11 +73,15 @@ public class Board {
 
             @Override
             public void mouseReleased(MouseEvent e) {
+                selectedPiece.move(e.getX()/64,e.getY()/64);
+                frame.repaint();
 
             }
 
             @Override
             public void mouseEntered(MouseEvent e) {
+                //System.out.println((getPiece(e.getX(),e.getY()).isWhite?"White":"Black")+getPiece(e.getX(),e.getY()).name);
+                selectedPiece=getPiece(e.getX(),e.getY());
 
 
             }
@@ -90,6 +95,11 @@ public class Board {
         frame.addMouseMotionListener(new MouseMotionListener() {
             @Override
             public void mouseDragged(MouseEvent e) {
+                if (selectedPiece!=null){
+                    selectedPiece.testingX=e.getX()-32;
+                    selectedPiece.testingY=e.getY()-32;
+                    frame.repaint();
+                }
 
             }
 
@@ -98,6 +108,18 @@ public class Board {
 
             }
         });
+    }
+    public static piece getPiece (int testingX, int testingY){
+        int xp=testingX/64;
+        int yp=testingY/64;
+        for (piece p: ps){
+            if (p.testingX==xp&&p.testingY==yp){
+                return p;
+            }
+        }
+        return null;
+
+
     }
 
     private static boolean checkStartLocations(int x, int y) {

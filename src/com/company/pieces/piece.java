@@ -12,7 +12,7 @@ public class piece {
     file column;
     Integer row;
     public int testingX,testingY;
-    boolean isWhite;
+    public boolean isWhite;
     LinkedList<piece> ps;//Linked list will store a pieces functions
     public String name;
     String fileLocation;
