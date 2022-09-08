@@ -1,6 +1,6 @@
 package com.company.pieces; //Contain functions to move any piece
 
-import com.company.common.file;
+import com.company.board.Board;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -9,54 +9,68 @@ import java.util.LinkedList;
 import java.util.Objects;
 
 public class piece {
-    file column;
-    Integer row;
-    public int testingX,testingY;
+    public Integer column;
+    public Integer row;
+
+    public int x,y;
+
     public boolean isWhite;
+    public boolean firstMove = true;
     LinkedList<piece> ps;//Linked list will store a pieces functions
     public String name;
     String fileLocation;
     public BufferedImage image;
 
+    public boolean validMove(int xp, int yp, boolean isWhite, boolean willKill){
+        return true;
+    }
 
 
 
 
-    public piece(file xp, int yp, boolean isWhite, String n, LinkedList<piece> ps, String fileLocation, int x) {
 
-
-        this.column = xp; //get the x and y values of each piece. x and y-values have a boundary of 1-8 for Y and A-H on for X
+    public piece(int xp, int yp, boolean isWhite, String n, LinkedList<piece> ps, String fileLocation) {
+        this.column = xp; //get the x and y values of each piece. x and y-values have a boundary of 0-7 for Y and 0-7 on for X
         this.row = yp;
+        this.x=xp*64;
+        this.y=yp*64;
         this.isWhite = isWhite;
         this.ps=ps;
         this.fileLocation = fileLocation;
         name = n;
         ps.add(this);
         setImage(fileLocation);
-        this.testingX = x;
-        this.testingY = yp-1;
     }
 
-    public void move(file xp, int yp) {
-        for (piece p : ps) {
-            if (p.column == xp && p.row == yp) {  //if the piece move is moved into the same position as another piece it will call on the kill method
-                p.kill();
+    public void move(int xp, int yp) {
+        boolean canMove = true;
+        boolean willKill = false;
+        if(Board.getPiece(xp*64,yp*64) !=null){
+            if(Board.getPiece(xp*64, yp*64).isWhite!=isWhite) {
+                willKill = true;
             }
+            else canMove = false;
         }
-        this.column = xp; //moves the piece after attacking or moving
-        this.row = yp;
+        if (canMove){
+            System.out.println(Board.selectedPieceOriginalXP + " " + Board.selectedPieceOriginalYP);
+            System.out.println(xp + " " + yp);
+            canMove = this.validMove(xp,yp,isWhite,willKill);
+        }
 
-
-
+        if(canMove){
+            if(willKill){
+            Board.getPiece(xp * 64, yp * 64).kill();
+            }
+            this.column=xp;
+            this.row=yp;
+            x=column*64;
+            y=row*64;
+            this.firstMove = false;
+        }
     }
-
     public void setImage(String fileLocation){
-
         image=setup(fileLocation, 64,64 );
-
     }
-
-
     public void kill() {
         ps.remove(this); //if a piece is killed its removed off the board
     }

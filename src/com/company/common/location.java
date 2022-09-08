@@ -5,20 +5,20 @@ import javax.swing.JLabel;
 import com.company.pieces.piece;
 
 public class location {
-    private final file column;
+    private final int column;
     private final Integer row;
     private JLabel picture = null;
     private piece Pieces = null;
 
 
 
-    public location( file File, Integer rank) {
-        column = File;
+    public location( Integer File, Integer rank) {
+        this.column = File;
         this.row = rank;
     }
 
 
-    public file getColumn() {
+    public Integer getColumn() {
         return column;
     }
 
