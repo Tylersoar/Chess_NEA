@@ -20,11 +20,11 @@ public class location {
 
     public Integer getColumn() {
         return column;
-    }
+    } //returns column for the location of a piece
 
     public Integer getRow() {
         return row;
-    }
+    } //returns row for the location of a piece
 
     @Override
     public boolean equals(Object o) {

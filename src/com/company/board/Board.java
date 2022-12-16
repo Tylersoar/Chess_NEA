@@ -1,4 +1,5 @@
 package com.company.board;
+import com.company.GUI;
 import com.company.common.location;
 import com.company.pieces.*;
 
@@ -7,21 +8,43 @@ import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
-import java.io.IOException;
+
 import java.util.LinkedList;
 
-public class Board {
+public class Board extends JPanel {
     public static LinkedList<piece> ps = new LinkedList<>();
     public static piece selectedPiece=null;
     private static LinkedList<location> position = new LinkedList<>();
     public static int selectedPieceOriginalXP;
     public static int selectedPieceOriginalYP;
+    public static boolean whiteTurn = true;
+    public static boolean pieceMoved = false;
 
-    public static void main(String[] args) throws IOException {
 
+    static int timerW,timerB;
+
+    public static boolean successfulLogin = false;
+
+    public static void main(String[] args) {
+
+        GUI loginMenu = new GUI();
+        loginMenu.GUI();
+
+        while(!successfulLogin){
+
+            System.out.println(" "); // not sure why this works, but you absolutely must keep this loop in
+        }
+
+        Board();
+    }
+
+    public static void Board(){
+
+        timerW = 600;
+        timerB = 600;
         JFrame frame = new JFrame();
         frame.setUndecorated(true);
-        frame.setBounds(10, 10, 512, 512); //creates window and sets the boundaries
+        frame.setBounds(10, 10, 512, 582); //creates window and sets the boundaries
 
         for(int x = 0; x < 8; x++) { //loops through both x and y-axis and uses boolean
             for (int y = 0; y < 8; y++) {//to set square to black of white depending on the boolean
@@ -35,34 +58,45 @@ public class Board {
         JPanel pn = new JPanel() {
 
 
-
-
-
-            @Override
             public void paint(Graphics g) {
 
-                boolean white = true;
-                for (int x = 0; x < 8; x++) { //loops through both x and y-axis and uses boolean
-                    for (int y = 0; y < 8; y++) {//to set square to black of white depending on the boolean
-                        //Sets the background colours of the board
-                        if (white) {
-                            g.setColor(new Color(232, 235, 239));
-                        } else {
-                            g.setColor(new Color(125, 135, 150));
-                        }
-                        g.fillRect(x * 64, y * 64, 64, 64);
-                        white = !white;
-
+            boolean white = true;
+            for (int x = 0; x < 8; x++) { //loops through both x and y-axis and uses boolean
+                for (int y = 0; y < 8; y++) {//to set square to black of white depending on the boolean
+                    //Sets the background colours of the board
+                    if (white) {
+                        g.setColor(new Color(232, 235, 239));
+                    } else {
+                        g.setColor(new Color(125, 135, 150));
                     }
+                    g.fillRect(x * 64, y * 64, 64, 64);
                     white = !white;
+
                 }
-
-                    for (int i = 0; i < ps.size(); i++) {
-                        g.drawImage(ps.get(i).image,(ps.get(i).column)*64,ps.get(i).row*64,null);
-                    }
-
+                white = !white;
             }
-        };
+
+            for (int i = 0; i < ps.size(); i++) {
+                g.drawImage(ps.get(i).image,(ps.get(i).column)*64,ps.get(i).row*64,null);
+            }
+            g.setFont(new Font("Arial", Font.PLAIN, 20)); //sets font for timer
+            g.setColor(Color.BLACK);
+            String secondValue;
+            if((timerW%60)<10){
+                secondValue = "0"+(timerW%60);
+            }
+            else{
+                secondValue = ""+(timerW%60);
+            }
+            g.drawString(("White" + (timerW / 60) + ":" + secondValue),10,560);  //draws the exact time and uses constructor to display minutes and seconds
+            if((timerB%60)<10){
+                secondValue = "0"+(timerB%60);
+            }
+            else{
+                secondValue = ""+(timerB%60);
+            }
+            g.drawString(("Black" + (timerB / 60) + ":" + secondValue),280,560);
+        }};
 
 
         frame.add(pn);
@@ -92,32 +126,80 @@ public class Board {
             }
             @Override
             public void mousePressed(MouseEvent e) {
-                System.out.println((getPiece(e.getX(),e.getY()).isWhite?"White":"Black")+getPiece(e.getX(),e.getY()).name);
+                //System.out.println((getPiece(e.getX(),e.getY()).isWhite?"White":"Black")+getPiece(e.getX(),e.getY()).name);
                 selectedPiece=getPiece(e.getX(),e.getY());
                 selectedPieceOriginalXP = e.getX()/64;
                 selectedPieceOriginalYP = e.getY()/64;
-                System.out.println(e.getX() + " " + e.getY());
+                //System.out.println(e.getX() + " " + e.getY());
             }
             @Override
             public void mouseReleased(MouseEvent e) {
-                selectedPiece.move(e.getX()/64,e.getY()/64);
+                if (selectedPiece.isWhite == whiteTurn){ //checks if selected piece iswhite
+                    selectedPiece.move(e.getX()/64,e.getY()/64);
+                    if((e.getX()/64 == selectedPieceOriginalXP) && (e.getY()/64 == selectedPieceOriginalYP)){
+                    }
+                    else if(pieceMoved){
+                        whiteTurn = !whiteTurn;  //if the piece moved is white "whites turn" will be printed allowing all white pieces to move
+                        if(whiteTurn){
+                            System.out.println("It is white turn");
+                        } else{
+                            System.out.println("It is black turn");  //because each piece has the iswhite boolean if its true all white pieces can move and if iswhite is false black can move.
+                        }
+                    }
+                }
                 frame.repaint();
                 selectedPiece = null;
+                pieceMoved = false;
+//                for (int i = 0; i < ps.size(); i++) {
+//                    piece tempPiece;
+//                    tempPiece = ps.get(i);
+//
+//                    if (tempPiece.name.equals("king")){
+//                        tempPiece.check();
+//                    }
+//
+//                }
             }
-
-
 
             @Override
             public void mouseEntered(MouseEvent e) {
             }
-
             @Override
             public void mouseExited(MouseEvent e) {
-
-
             }
         });
 
+        double drawInterval = 1000000000 / 60; //0.01666 seconds
+
+        long lastTime = System.nanoTime();
+        long currentTime;
+        long timer = 0;
+
+        while (true) {
+            currentTime = System.nanoTime();
+            timer += (currentTime - lastTime);  //game loop which keeps track of time
+            lastTime = currentTime;
+            frame.repaint();
+            if (timer >= 1000000000) {
+                if (whiteTurn) {
+                    timerW -= 1;
+                } else {
+                    timerB -= 1;
+                }
+                //System.out.println("FPS:" + drawCount);
+                timer = 0;
+            }
+            if (timerW == 0) {
+                timerW = 0;
+                break;
+            }
+            if (timerB == 0) {
+                timerB = 0;
+                break;
+
+                //need to implement a play again button
+            }
+        }
     }
     public static piece getPiece (int testingX, int testingY){
         int xp=testingX/64;
@@ -128,9 +210,18 @@ public class Board {
             }
         }
         return null;
-
-
     }
+
+    public static piece getPieceC (int testingX, int testingY){
+        for (piece p: ps){
+            if (p.column== testingX &&p.row== testingY){
+                return p;
+            }
+        }
+        return null;
+    }
+
+
 
     private static boolean checkStartLocations(int x, int y) {
         //file.values()[x] this bit sets the A,B,C.... bit of the chess piece using the file enums

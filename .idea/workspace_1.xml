@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f7812cce-ef95-4361-b50b-85da91c47d73" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/company/board/buttonTemplate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Chess NEA/com/company/board/Board$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chess NEA/com/company/board/Board$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Chess NEA/com/company/board/Board$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chess NEA/com/company/board/Board$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Chess NEA/com/company/board/Board$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chess NEA/com/company/board/Board$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Chess NEA/com/company/board/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chess NEA/com/company/board/Board.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Chess NEA/com/company/pieces/bishop.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chess NEA/com/company/pieces/bishop.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Chess NEA/com/company/pieces/king.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chess NEA/com/company/pieces/king.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Chess NEA/com/company/pieces/pawn.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chess NEA/com/company/pieces/pawn.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Chess NEA/com/company/pieces/piece.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chess NEA/com/company/pieces/piece.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Chess NEA/com/company/pieces/queen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chess NEA/com/company/pieces/queen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Chess NEA/com/company/pieces/rook.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chess NEA/com/company/pieces/rook.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/board/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/board/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/common/location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/common/location.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/pieces/bishop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/pieces/bishop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/pieces/king.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/pieces/king.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/pieces/pawn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/pieces/pawn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/pieces/piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/pieces/piece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/pieces/queen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/pieces/queen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/pieces/rook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/pieces/rook.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectId" id="2EXGVyqtMb0KI4ZKOPTOFveb2tG" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="ToolWindowRun.ShowToolbar" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Board" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.company.board.Board" />
+      <module name="Chess NEA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.company.board.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Board" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f7812cce-ef95-4361-b50b-85da91c47d73" name="Changes" comment="" />
+      <created>1662734543452</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1662734543452</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>
