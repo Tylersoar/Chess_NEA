@@ -129,8 +129,6 @@ public class piece {
         ps.add(this);
         setImage(fileLocation);
     }
-    public void check(){
-    }
 
     public void move(int xp, int yp) {
         boolean canMove = true;
