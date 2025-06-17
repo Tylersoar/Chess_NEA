@@ -4,7 +4,7 @@ import java.util.Objects;
 import javax.swing.JLabel;
 import com.company.pieces.piece;
 
-public class location {
+public class Location {
     private final int column;
     private final Integer row;
     private JLabel picture = null;
@@ -12,7 +12,7 @@ public class location {
 
 
 
-    public location( Integer File, Integer rank) {
+    public Location(Integer File, Integer rank) {
         this.column = File;
         this.row = rank;
     }
@@ -30,7 +30,7 @@ public class location {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        location location = (location) o;
+        Location location = (Location) o;
         return column == location.column && Objects.equals(row, location.row);
     }
 

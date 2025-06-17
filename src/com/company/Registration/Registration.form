@@ -32,7 +32,7 @@
         </constraints>
         <properties>
           <font name="Fira Code" size="12" style="0"/>
-          <text value="Passwords must be at least 6 characters"/>
+          <text value="Passwords must be at least 8 characters"/>
         </properties>
       </component>
       <component id="e1a14" class="javax.swing.JLabel">
