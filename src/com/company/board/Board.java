@@ -27,13 +27,13 @@ public class Board extends JPanel {
 
   public static void main(String[] args) {
 
-    GUI loginMenu = new GUI();
-    loginMenu.GUI();
+    // GUI loginMenu = new GUI();
+    // loginMenu.GUI();
 
-    while (!successfulLogin) {
+    // while (!successfulLogin) {
 
-      System.out.println(" "); // not sure why this works, but you absolutely must keep this loop in
-    }
+    //   System.out.println(" "); // not sure why this works, but you absolutely must keep this loop in
+    // }
 
     Board();
   }
