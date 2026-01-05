@@ -1,0 +1,15 @@
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Build output
+out/
+target/
+
+# Databases / sensitive
+*.accdb
+*.db
+
+# OS files
+.DS_Store
+Thumbs.db
