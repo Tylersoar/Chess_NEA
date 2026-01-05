@@ -4,9 +4,9 @@ import com.company.board.Board;
 
 import java.util.LinkedList;
 
-public class Knight extends piece {
+public class Knight extends Piece {
 
-    public Knight(int xp, int yp, boolean isWhite, String n, LinkedList<piece> ps, String fileLocation) {
+    public Knight(int xp, int yp, boolean isWhite, String n, LinkedList<Piece> ps, String fileLocation) {
         super(xp, yp, isWhite, n, ps, fileLocation);
     }
 

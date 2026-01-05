@@ -2,13 +2,13 @@ package com.company.common;
 
 import java.util.Objects;
 import javax.swing.JLabel;
-import com.company.pieces.piece;
+import com.company.pieces.Piece;
 
 public class Location {
     private final int column;
     private final Integer row;
     private JLabel picture = null;
-    private piece Pieces = null;
+    private Piece Pieces = null;
 
 
 
@@ -47,11 +47,11 @@ public class Location {
         this.picture = picture;
     }
 
-    public piece getPieces() {
+    public Piece getPieces() {
         return Pieces;
     }
 
-    public void setPieces(piece pieces) {
+    public void setPieces(Piece pieces) {
         Pieces = pieces;
     }
 }

@@ -4,9 +4,9 @@ import com.company.board.Board;
 
 import java.util.LinkedList;
 
-public class Pawn extends piece{
+public class Pawn extends Piece {
 
-    public Pawn(int xp, int yp, boolean isWhite, String n, LinkedList<piece> ps, String fileLocation) {
+    public Pawn(int xp, int yp, boolean isWhite, String n, LinkedList<Piece> ps, String fileLocation) {
         super(xp, yp, isWhite, n, ps, fileLocation);
     }
 
